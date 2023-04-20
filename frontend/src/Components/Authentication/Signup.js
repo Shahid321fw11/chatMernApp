@@ -90,6 +90,7 @@ const Signup = () => {
   const postDetails = (pics) => {
     setPicLoading(true);
     if (pics === undefined) {
+      console.log("und");
       toast({
         title: "Please Select an Image!",
         status: "warning",
@@ -103,12 +104,15 @@ const Signup = () => {
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "chat-app");
-      data.append("cloud_name", "piyushproj");
-      fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
-        method: "post",
-        body: data,
-      })
+      data.append("upload_preset", "my-mern-chat-app-cloud");
+      data.append("cloud_name", "my-chat-app-mern-cloudinary");
+      fetch(
+        "https://api.cloudinary.com/v1_1/my-chat-app-mern-cloudinary/image/upload",
+        {
+          method: "post",
+          body: data,
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
@@ -116,7 +120,6 @@ const Signup = () => {
           setPicLoading(false);
         })
         .catch((err) => {
-          console.log(err);
           setPicLoading(false);
         });
     } else {
