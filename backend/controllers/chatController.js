@@ -1,18 +1,15 @@
 const asyncHandler = require("express-async-handler");
 const Chat = require("../Models/chatModel");
 // const User = require("../Models/userModel");
-
 //@description     Create or fetch One to One Chat
 //@route           POST /api/chat/
 //@access          Protected
 const accessChat = asyncHandler(async (req, res) => {
   const { userId } = req.body;
-
   if (!userId) {
     console.log("UserId param not sent with request");
     return res.sendStatus(400);
   }
-
   var isChat = await Chat.find({
     isGroupChat: false,
     $and: [
@@ -36,7 +33,6 @@ const accessChat = asyncHandler(async (req, res) => {
       isGroupChat: false,
       users: [req.user._id, userId],
     };
-
     try {
       const createdChat = await Chat.create(chatData);
       const FullChat = await Chat.findOne({ _id: createdChat._id }).populate(
