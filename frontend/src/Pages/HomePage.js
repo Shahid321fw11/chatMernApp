@@ -14,15 +14,19 @@ import Signup from "../Components/Authentication/Signup";
 // import { useHistory } from "react-router";
 // import Login from "../components/Authentication/Login";
 // import Signup from "../components/Authentication/Signup";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   // const history = useHistory();
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("userInfo"));
 
-  //   if (user) history.push("/chats");
-  // }, [history]);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (user) navigate("/chats")
+    //  history.push("/chats");
+  }, [navigate]);
 
   return (
     <Container maxW="xl" centerContent>
