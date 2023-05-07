@@ -19,7 +19,8 @@ import {
 import { Tooltip } from "@chakra-ui/tooltip";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/toast";
@@ -49,11 +50,13 @@ function SideDrawer() {
 
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const history = useHistory();
+  // const history = useHistory();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    history.push("/");
+    // history.push("/");
+    navigate('/')
   };
 
   const handleSearch = async () => {
@@ -125,7 +128,7 @@ function SideDrawer() {
   return (
     <>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="space-between"
         alignItems="center"
         bg="white"
@@ -147,15 +150,15 @@ function SideDrawer() {
         <div>
           <Menu>
             <MenuButton p={1}>
-              <NotificationBadge
+              {/* <NotificationBadge
                 count={notification.length}
                 effect={Effect.SCALE}
               />
-              <BellIcon fontSize="2xl" m={1} />
+              <BellIcon fontSize="2xl" m={1} /> */}
             </MenuButton>
             <MenuList pl={2}>
-              {!notification.length && "No New Messages"}
-              {notification.map((notif) => (
+              {/* {!notification.length && "No New Messages"} */}
+              {/* {notification.map((notif) => (
                 <MenuItem
                   key={notif._id}
                   onClick={() => {
@@ -167,7 +170,7 @@ function SideDrawer() {
                     ? `New Message in ${notif.chat.chatName}`
                     : `New Message from ${getSender(user, notif.chat.users)}`}
                 </MenuItem>
-              ))}
+              ))} */}
             </MenuList>
           </Menu>
           <Menu>
@@ -195,7 +198,7 @@ function SideDrawer() {
         <DrawerContent>
           <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
           <DrawerBody>
-            <Box d="flex" pb={2}>
+            <Box display="flex" pb={2}>
               <Input
                 placeholder="Search by name or email"
                 mr={2}
@@ -215,7 +218,7 @@ function SideDrawer() {
                 />
               ))
             )}
-            {loadingChat && <Spinner ml="auto" d="flex" />}
+            {loadingChat && <Spinner ml="auto" display="flex" />}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
