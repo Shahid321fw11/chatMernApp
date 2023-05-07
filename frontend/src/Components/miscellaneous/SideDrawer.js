@@ -19,7 +19,6 @@ import {
 import { Tooltip } from "@chakra-ui/tooltip";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
-// import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -50,12 +49,10 @@ function SideDrawer() {
 
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const history = useHistory();
   const navigate = useNavigate();
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    // history.push("/");
     navigate('/')
   };
 
@@ -139,13 +136,13 @@ function SideDrawer() {
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
+            <Text display={{ base: "none", md: "flex" }} px={4}>
               Search User
             </Text>
           </Button>
         </Tooltip>
         <Text fontSize="2xl" fontFamily="Work sans">
-          Talk-A-Tive
+          ChitChat
         </Text>
         <div>
           <Menu>
@@ -210,7 +207,9 @@ function SideDrawer() {
             {loading ? (
               <ChatLoading />
             ) : (
+              
               searchResult?.map((user) => (
+                
                 <UserListItem
                   key={user._id}
                   user={user}

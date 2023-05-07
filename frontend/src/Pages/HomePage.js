@@ -1,20 +1,20 @@
 import {
-  Box,
   Container,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
+import { Box, Text } from "@chakra-ui/layout";
 import Login from "../Components/Authentication/Login";
 import Signup from "../Components/Authentication/Signup";
 // import { useHistory } from "react-router";
 // import Login from "../components/Authentication/Login";
 // import Signup from "../components/Authentication/Signup";
 import { useNavigate } from "react-router-dom";
+
 
 const HomePage = () => {
   // const history = useHistory();
@@ -41,7 +41,7 @@ const HomePage = () => {
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+        ChitChat
         </Text>
       </Box>
 

@@ -15,11 +15,11 @@ const Signup = () => {
   //   const history = useHistory();
   const navigate = useNavigate();
 
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [confirmpassword, setConfirmpassword] = useState();
-  const [password, setPassword] = useState();
-  const [pic, setPic] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
+  const [password, setPassword] = useState('');
+  const [pic, setPic] = useState('');
   const [picLoading, setPicLoading] = useState(false);
 
   const submitHandler = async () => {
@@ -167,7 +167,7 @@ const Signup = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
-      <FormControl id="password" isRequired>
+      <FormControl id="password_confirm" isRequired>
         <FormLabel>Confirm Password</FormLabel>
         <InputGroup size="md">
           <Input
