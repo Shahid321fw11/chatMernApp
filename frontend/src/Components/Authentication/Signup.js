@@ -5,21 +5,19 @@ import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
-// import { useHistory } from "react-router";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
-  //   const history = useHistory();
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [confirmpassword, setConfirmpassword] = useState('');
   const [password, setPassword] = useState('');
-  const [pic, setPic] = useState('');
+  const [pic, setPic] = useState();
   const [picLoading, setPicLoading] = useState(false);
 
   const submitHandler = async () => {
@@ -191,7 +189,7 @@ const Signup = () => {
           onChange={(e) => postDetails(e.target.files[0])}
         />
       </FormControl>
-      <Button
+        <Button
         colorScheme="blue"
         width="100%"
         style={{ marginTop: 15 }}
