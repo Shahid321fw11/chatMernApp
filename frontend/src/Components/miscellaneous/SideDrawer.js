@@ -53,7 +53,7 @@ function SideDrawer() {
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    navigate('/')
+    navigate("/");
   };
 
   const handleSearch = async () => {
@@ -70,15 +70,12 @@ function SideDrawer() {
 
     try {
       setLoading(true);
-
       const config = {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       };
-
       const { data } = await axios.get(`/api/user?search=${search}`, config);
-
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
@@ -147,15 +144,15 @@ function SideDrawer() {
         <div>
           <Menu>
             <MenuButton p={1}>
-              {/* <NotificationBadge
+              <NotificationBadge
                 count={notification.length}
                 effect={Effect.SCALE}
               />
-              <BellIcon fontSize="2xl" m={1} /> */}
+              <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
             <MenuList pl={2}>
-              {/* {!notification.length && "No New Messages"} */}
-              {/* {notification.map((notif) => (
+              {!notification.length && "No New Messages"}
+              {notification.map((notif) => (
                 <MenuItem
                   key={notif._id}
                   onClick={() => {
@@ -167,7 +164,7 @@ function SideDrawer() {
                     ? `New Message in ${notif.chat.chatName}`
                     : `New Message from ${getSender(user, notif.chat.users)}`}
                 </MenuItem>
-              ))} */}
+              ))}
             </MenuList>
           </Menu>
           <Menu>
@@ -207,9 +204,7 @@ function SideDrawer() {
             {loading ? (
               <ChatLoading />
             ) : (
-              
               searchResult?.map((user) => (
-                
                 <UserListItem
                   key={user._id}
                   user={user}

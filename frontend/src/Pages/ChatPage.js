@@ -8,17 +8,23 @@ import MyChats from "../Components/MyChats";
 
 const ChatPage = () => {
   const [fetchAgain, setFetchAgain] = useState(false);
-  const {user} = ChatState();
+  const { user } = ChatState();
   return (
-    <div style={{ width: "100%" }}>
-    {user && <SideDrawer />}
-    <Box display="flex" justifyContent="space-between" w="100%" h="91.5vh" p="10px">
-    {user && <MyChats fetchAgain={fetchAgain} />}
-        {/* {user && (
+    <div style={{ width: "100%", background: "#c6c6c6" }}>
+      {user && <SideDrawer />}
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        w="100%"
+        h="91.5vh"
+        p="10px"
+      >
+        {user && <MyChats fetchAgain={fetchAgain} />}
+        {user && (
           <Chatbox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
-        )} */}
-    </Box>
-  </div>
+        )}
+      </Box>
+    </div>
   );
 };
 

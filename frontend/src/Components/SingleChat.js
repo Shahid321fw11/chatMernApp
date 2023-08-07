@@ -80,6 +80,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             Authorization: `Bearer ${user.token}`,
           },
         };
+        console.log(config, "check config");
         setNewMessage("");
         const { data } = await axios.post(
           "/api/message",
@@ -89,7 +90,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
           config
         );
-        socket.emit("new message", data);
+        // socket.emit("new message", data);
         setMessages([...messages, data]);
       } catch (error) {
         toast({

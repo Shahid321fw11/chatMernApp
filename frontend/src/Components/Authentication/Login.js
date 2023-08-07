@@ -12,8 +12,8 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   //   const history = useHistory();
@@ -109,7 +109,7 @@ const Login = () => {
       >
         Login
       </Button>
-      <Button
+      {/* <Button
         variant="solid"
         colorScheme="red"
         width="100%"
@@ -119,7 +119,7 @@ const Login = () => {
         }}
       >
         Get Guest User Credentials
-      </Button>
+      </Button> */}
     </VStack>
   );
 };
