@@ -166,10 +166,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           <Text
             fontSize={{ base: "28px", md: "30px" }}
             pb={3}
-            px={2}
+            // px={2}
             w="100%"
             fontFamily="Work sans"
-            d="flex"
+            display="flex"
             justifyContent={{ base: "space-between" }}
             alignItems="center"
           >
@@ -198,10 +198,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               ))}
           </Text>
           <Box
-            d="flex"
+            display="flex"
             flexDir="column"
             justifyContent="flex-end"
             p={3}
+            padding-top={0}
             bg="#E8E8E8"
             w="100%"
             h="100%"
