@@ -13,16 +13,32 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Api is Running");
-});
+// app.get("/", (req, res) => {
+//   res.send("Api is Running");
+// });
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
 // --------------------------deployment------------------------------
-app.use(notFound);
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/../frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname1, "/../frontend", "build", "index.html")
+    )
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+
+// --------------------------deployment------------------------------app.use(notFound);
 app.use(errorHandler);
 const port = process.env.PORT;
 const server = app.listen(port, console.log(`server running on port ${port}`));
