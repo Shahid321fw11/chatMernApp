@@ -15,8 +15,8 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-// const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
-const ENDPOINT = "https://chitchatapp-fi5m.onrender.com/";
+// const ENDPOINT = "http://localhost:5000"; // before deployment use this
+const ENDPOINT = "https://chitchatapp-fi5m.onrender.com/"; // after deployment use your own hosted URL.
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
