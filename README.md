@@ -63,7 +63,7 @@ npm install
 PORT="Enter your port number"
 MONGO_URI="Enter your connection string"
 JWT_SECRET="Enter your key"
-NODE_ENV="Enter your environment"
+NODE_ENV="Enter your environment" // not necessary for local Setup.
 ```
 
 4. Start the backend server:
@@ -109,3 +109,88 @@ Welcome to the backend of the ChitChat app! This section provides an overview of
 - **mongoose** - A MongoDB object modeling tool for Node.js.
 - **nodemon** - A utility that monitors for changes in files and automatically restarts the server.
 - **Socket.io** - A library for real-time communication between clients and servers using WebSocket.
+
+# Features of the ChitChat App
+
+Welcome to the features documentation of the ChitChat app. Below are the key features implemented in the application:
+
+## Features
+
+1. **User Authentication and Signup**:
+
+   - Secure user authentication and signup functionality.
+   - Users can create accounts to access the app.
+
+2. **Profile Picture Upload**:
+
+   - During signup, users can upload their profile picture.
+   - Utilizes the Cloudinary platform for efficient image storage.
+
+3. **User Search**:
+
+   - Users can search for existing users by their name or email.
+
+4. **Real-time Chats**:
+
+   - **One-on-One Chat**: Real-time chat functionality between two users.
+   - **Group Chat**: Real-time group chat functionality for multiple users.
+
+5. **New Message Notifications**:
+
+   - Users receive notifications when new messages are sent.
+
+6. **User Profile Information**:
+
+   - Display information about the current user and their profile.
+   - View other user's profiles.
+
+7. **Real-time Typing Indicator**:
+
+   - Shows when another user is typing a message, similar to WhatsApp.
+
+8. **Navigation Icons**:
+   - Back icon: Return to previous tabs.
+   - Eye icon (Single Chat):
+     - Shows detailed information about the other user in a one-on-one chat.
+   - Eye icon (Group Chat):
+     - Displays info of all users in the group chat.
+     - Allows changing the group name.
+     - Enables deleting users from the group.
+     - Provides the ability to leave the group.
+
+# Live Demo
+
+Experience ChitChat in action by visiting the live demo:
+
+[ChitChat App](https://chitchatapp-fi5m.onrender.com/)
+
+Simply click the link above or copy and paste it into your web browser to start using ChitChat right away. Explore the real-time messaging, user profiles, group chats, and more!
+
+I hope you enjoy using ChitChat as much as I enjoyed creating it. Feel free to provide feedback or reach out to me with any questions.
+
+Happy chatting!
+
+# Contact Me
+
+Feel free to connect with me via the following platforms. I'd love to hear from you!
+
+- **LinkedIn:** [Connect](https://www.linkedin.com/in/shahid-ansari-7387521b1/)
+- **Email:** [sidansari20@gmail.com](mailto:sidansari20@gmail.com)
+
+Whether you have questions, feedback, or simply want to connect, feel free to reach out on either of these platforms. I look forward to chatting with you!
+
+Happy connecting!
+
+# Conclusion
+
+Thank you for exploring the ChitChat app! I hope this README has provided you with a comprehensive overview of the app's features, setup instructions, and ways to connect with me. ChitChat is designed to bring people together through real-time communication, making conversations with friends and groups seamless and enjoyable.
+
+Feel free to experience ChitChat firsthand by visiting the live demo: [ChitChat App](https://chitchatapp-fi5m.onrender.com/). Explore the features, initiate chats, and engage in dynamic conversations.
+
+Should you have any questions, suggestions, or feedback, don't hesitate to reach out to me via [LinkedIn](https://www.linkedin.com/in/shahid-ansari-7387521b1/) or by emailing me at [sidansari20@gmail.com](mailto:sidansari20@gmail.com). You can also find my work on [GitHub](https://github.com/Shahid321fw11), where contributions and collaboration are always welcome.
+
+I appreciate your interest in ChitChat and hope you find it as valuable and enjoyable as I did while creating it. Happy chatting and connecting!
+
+Warm regards,
+
+**Shahid Ansari**
